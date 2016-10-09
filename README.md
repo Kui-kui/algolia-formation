@@ -88,7 +88,6 @@ Now, one single command will index your entity:
 php bin/console algolia:reindex AppBundle:Person
 ```
 
-
 ## Searching
 
 In your search page view, call for the InstantSearch library:
@@ -124,12 +123,12 @@ search.addWidget(
 );
 ```
 
-Tell your app where to display the search results:
+Tell your app how to display the search results and the number of results per page:
 ```js
 search.addWidget(
     instantsearch.widgets.hits({
-        container: '.results-container',
-        hitsPerPage: hitsPerPage,
+        container: '.result-container',
+        hitsPerPage: 10,
         templates: {
             item: resultTemplate,
         }
@@ -139,5 +138,14 @@ search.addWidget(
 
 Define the result template:
 ```js
-
+var resultTemplate =
+  '<div class="result">' +
+    '<div class=""image>'
+      '<img src="{{image}}">' +
+    '</div>' +
+    '<div class="names">' +
+      '<span class="last-name">{{lastName}}</span>' +
+      '<span class="first-name">{{firstName}}</span>' +
+    '</div>' +
+  '</div>'
 ```
