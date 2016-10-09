@@ -87,3 +87,15 @@ Now, one single command will index your entity:
 ```bash
 php bin/console algolia:reindex AppBundle:Person
 ```
+
+
+## Searching
+
+In your search page view, call for the InstantSearch library:
+
+```html
+{% block javascripts %}
+  <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+  <script src="{{ asset('js/algolia.js') }}"></script>
+{% endblock %}
+```
