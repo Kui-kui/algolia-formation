@@ -32,7 +32,7 @@ algolia:
     api_key: YOUR_ADMIN_API_KEY
 ```
 
-## Indexing entity properties or methods
+## Index your entity's properties and methods
 
 The `Attribute` annotation marks a field or method for indexing by Algolia.
 
@@ -90,7 +90,7 @@ php bin/console algolia:reindex AppBundle:Person
 
 Your data is now available on the [Algolia dashboard](https://www.algolia.com/dashboard)
 
-## Searching
+## Start searching
 
 In your search page view, call for the InstantSearch library:
 ```html
@@ -156,3 +156,25 @@ One last line and you are ready to search:
 ```js
 search.start();
 ```
+
+## Paginate your results
+
+Before ``search.start();``, add:
+
+```js
+search.addWidget(
+    instantsearch.widgets.pagination({
+        container: '.pagination-container',
+        cssClasses: {
+            active: 'active'
+        },
+        labels: {
+            first: '<span aria-hidden="true">←</span>',
+            previous: '&laquo Précédent',
+            next: 'Suivant &raquo',
+            last: '<span aria-hidden="true">→</span>'
+        }
+    })
+);
+```
+

@@ -12,6 +12,10 @@ body {
 
 input {
     width: 100%;
+    height: 36px;
+    font-size: 1rem;
+    -webkit-border-radius: 5px;
+    -webkit-appearance: none;
 }
 
 .results {
@@ -52,4 +56,30 @@ input {
 
 .last-name {
     text-transform: uppercase;
+}
+
+
+.pagination-container {
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding: 0 5px;
+}
+
+.pagination-container a {
+    padding: 0 5px;
+}
+
+.ais-pagination--link {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    color: white;
+    background-color: #df001a;
+    padding: 0 5px;
+    border-radius: 5px;
 }
