@@ -42,6 +42,14 @@ class Person
      *
      */
     private $image;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gender", type="string")
+     *
+     */
+    private $gender;
 
 
     /**
@@ -124,6 +132,30 @@ class Person
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     *
+     * @return Person
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
     /**
