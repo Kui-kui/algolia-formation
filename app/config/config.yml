@@ -72,3 +72,7 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+algolia:
+    application_id: "5GV5O9YDQI"
+    api_key: "6416e8ef333697f5eea64c144caac4a2"
