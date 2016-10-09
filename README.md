@@ -88,6 +88,8 @@ Now, one single command will index your entity:
 php bin/console algolia:reindex AppBundle:Person
 ```
 
+Your data is now available on the [Algolia dashboard](https://www.algolia.com/dashboard)
+
 ## Searching
 
 In your search page view, call for the InstantSearch library:
@@ -109,7 +111,7 @@ Define a new instance of InstantSearch:
 var search = instantsearch({
     appId: application_id,
     apiKey: search_api_key,
-    indexName: 'Person_dev',
+    indexName: 'Person_dev'
 });
 ```
 
@@ -119,19 +121,6 @@ search.addWidget(
     instantsearch.widgets.searchBox({
         container: '#algolia',
         placeholder: 'Rechercher…'
-    })
-);
-```
-
-Tell your app how to display the search results and the number of results per page:
-```js
-search.addWidget(
-    instantsearch.widgets.hits({
-        container: '.result-container',
-        hitsPerPage: 10,
-        templates: {
-            item: resultTemplate,
-        }
     })
 );
 ```
@@ -147,5 +136,23 @@ var resultTemplate =
       '<span class="last-name">{{lastName}}</span>' +
       '<span class="first-name">{{firstName}}</span>' +
     '</div>' +
-  '</div>'
+  '</div>';
+```
+
+Tell your app how to display the search results and the number of results per page:
+```js
+search.addWidget(
+    instantsearch.widgets.hits({
+        container: '.result-container',
+        hitsPerPage: 10,
+        templates: {
+            item: resultTemplate
+        }
+    })
+);
+```
+
+One last line and you are ready to search:
+```js
+search.start();
 ```
