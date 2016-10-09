@@ -18,11 +18,12 @@ var search = instantsearch({
   indexName: 'Person_dev'
 });
 
-var search = instantsearch({
-  appId: application_id,
-  apiKey: search_api_key,
-  indexName: 'Person_dev'
-});
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#algolia',
+    placeholder: 'Rechercher…'
+  })
+);
 
 search.addWidget(
   instantsearch.widgets.hits({
