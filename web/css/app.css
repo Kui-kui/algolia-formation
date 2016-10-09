@@ -1,6 +1,6 @@
 body {
     background-image: url('../img/seigaiha.png');
-    width: 40%;
+    width: 80%;
     margin: auto;
     font-family: 'Montserrat';
 }
@@ -18,16 +18,28 @@ input {
 
 .results {
     display: flex;
-    flex-wrap: wrap
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.filter-container {
+    width: 20%;
+    background-color: white;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+.result-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 
 .result {
-    margin: 10px;
     background-color: white;
     display: flex;
     flex-direction: row;
-    flex: 1;
-    min-width: 40%;
+    margin-bottom: 5px;
 }
 
 .image {
