@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Algolia\AlgoliaSearchBundle\Mapping\Annotation as Algolia;
+
 
 /**
  * @ORM\Entity
@@ -24,6 +26,8 @@ class Person
      *
      * @ORM\Column(name="lastName", type="string", length=255)
      *
+     * @Algolia\Attribute
+     *
      */
     private $lastName;
 
@@ -31,6 +35,8 @@ class Person
      * @var string
      *
      * @ORM\Column(name="firstName", type="string", length=255)
+     *
+     * @Algolia\Attribute
      *
      */
     private $firstName;
@@ -40,6 +46,8 @@ class Person
      *
      * @ORM\Column(name="image", type="string")
      *
+     * @Algolia\Attribute
+     *
      */
     private $image;
     
@@ -47,6 +55,8 @@ class Person
      * @var string
      *
      * @ORM\Column(name="gender", type="string")
+     *
+     * @Algolia\Attribute
      *
      */
     private $gender;
@@ -162,6 +172,8 @@ class Person
      * Get fullName
      *
      * @return string
+     *
+     * @Algolia\Attribute
      */
     public function getFullName()
     {
