@@ -92,10 +92,52 @@ php bin/console algolia:reindex AppBundle:Person
 ## Searching
 
 In your search page view, call for the InstantSearch library:
-
 ```html
 {% block javascripts %}
   <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
   <script src="{{ asset('js/algolia.js') }}"></script>
 {% endblock %}
+```
+
+Create an ``algolia.js``file and paste your application ID and your search API key:
+```js
+var application_id = 'YOUR_APPLICATION_ID';
+var search_api_key = 'YOUR_SEARCH_API_KEY';
+```
+
+Define a new instance of InstantSearch:
+```js
+var search = instantsearch({
+    appId: application_id,
+    apiKey: search_api_key,
+    indexName: 'Person_dev',
+});
+```
+
+Link it to your search bar:
+```js
+search.addWidget(
+    instantsearch.widgets.searchBox({
+        container: '#algolia',
+        placeholder: 'Rechercher…'
+    })
+);
+```
+
+Tell your app where to display the search results:
+```js
+search.addWidget(
+    instantsearch.widgets.hits({
+        container: '.results-container',
+        hitsPerPage: hitsPerPage,
+        templates: {
+            item: resultTemplate,
+        }
+    })
+);
+```
+
+Define the result template:
+```js
+
 ```
