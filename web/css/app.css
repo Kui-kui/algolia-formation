@@ -83,3 +83,12 @@ li {
     padding: 0 5px;
     border-radius: 5px;
 }
+
+.is-active {
+    color: red;
+}
+
+.filter {
+
+    text-decoration: none;
+}

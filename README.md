@@ -178,3 +178,18 @@ search.addWidget(
 );
 ```
 
+## Filter your results by gender
+
+Finally, add: 
+
+```js
+search.addWidget(
+    instantsearch.widgets.refinementList({
+        container: '.filter-list',
+        attributeName: 'gender',
+        templates: {
+            item: filterTemplate
+        }
+    })
+);
+```
