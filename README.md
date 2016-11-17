@@ -32,7 +32,7 @@ algolia:
     api_key: YOUR_ADMIN_API_KEY
 ```
 
-## Index your entity's properties and methods
+## Map your entity's properties and methods with your index
 
 The `Attribute` annotation marks a field or method for indexing by Algolia.
 
@@ -89,6 +89,9 @@ php bin/console algolia:reindex AppBundle:Person
 ```
 
 Your data is now available on the [Algolia dashboard](https://www.algolia.com/dashboard)
+
+What's even better is that your entity and your index are mapped. 
+In other words, if you modify your entity in your Sonata backoffice for instance, your index will be modified as well.
 
 ## Start searching
 
